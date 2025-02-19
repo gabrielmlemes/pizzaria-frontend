@@ -24,8 +24,8 @@ const NewUser = () => {
     }
   }
   return (
-    <div className="w-full min-h-screen flex justify-center items-center flex-col">
-      <h1 className="text-[68px] md:text-8xl text-gray-50 font-bold">
+    <div className="w-full h-[100vh-16px] flex justify-center items-center flex-col pt-16">
+      <h1 className="text-[68px] md:text-8xl text-gray-50 font-bold text-center">
         Novo <span className="text-red-700">Usuário</span>
       </h1>
 

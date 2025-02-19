@@ -48,7 +48,14 @@ export default async function Home() {
           The <span className="text-red-700">Pizza</span>
         </h1>
         <div className="relative w-28 h-28 ">
-          <Image src={logoImg} alt="logo" fill className="object-cover pl-3" />
+          <Image
+            src={logoImg}
+            alt="logo"
+            fill
+            className="object-cover pl-3"
+            priority={true}
+            quality={100}
+          />
         </div>
       </div>
 

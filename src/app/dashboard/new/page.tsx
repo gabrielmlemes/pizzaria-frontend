@@ -1,4 +1,5 @@
 import { api } from "@/lib/api";
+import Button from "../components/button";
 
 const NewUser = () => {
   async function handleRegister(formData: FormData) {
@@ -52,12 +53,7 @@ const NewUser = () => {
             required
             name="password"
           />
-          <button
-            className="bg-red-700 w-full hover:scale-105 duration-300 text-white font-semibold h-11 rounded-md hover:scale-h-115"
-            type="submit"
-          >
-            Acessar
-          </button>
+          <Button text="Cadastrar"/>
         </div>
       </form>
     </div>

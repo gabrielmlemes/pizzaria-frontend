@@ -39,13 +39,13 @@ const Header = () => {
 
         <div className="items-center justify-center flex gap-5">
           <Link
-            href="#"
+            href="/dashboard/category"
             className="text-gray-200 text-lg hover:scale-105 hover:text-red-600 duration-300"
           >
             Nova categoria
           </Link>
           <Link
-            href="#"
+            href="/dashboard/product"
             className="text-gray-200 text-lg hover:scale-105 hover:text-red-600 duration-300"
           >
             Cardápio

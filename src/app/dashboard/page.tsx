@@ -1,11 +1,12 @@
 import Link from "next/link";
+import Orders from "./components/orders";
 
 const Dashboard = () => {
-    return ( 
-        <>
-        <h1 className="text-white">DASHBOARD</h1>
-        </>
-     );
-}
- 
+  return (
+    <>
+      <Orders />
+    </>
+  );
+};
+
 export default Dashboard;

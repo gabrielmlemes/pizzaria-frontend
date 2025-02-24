@@ -1,9 +1,21 @@
+"use client";
+
 import Image from "next/image";
 import logoImg from "/public/pizza-svgrepo-com.svg";
 import Link from "next/link";
 import { LogOutIcon } from "lucide-react";
+import { deleteCookie } from "cookies-next";
+import { useRouter } from "next/navigation";
 
 const Header = () => {
+  const router = useRouter();
+
+  async function handleLogout() {
+    deleteCookie("session", { path: "/" });
+
+    router.replace("/");
+  }
+
   return (
     <header>
       <nav className=" px-12 pt-4 flex justify-between">
@@ -44,13 +56,9 @@ const Header = () => {
           >
             Criar usuário
           </Link>
-          <form className="pt-1">
-            <button type="submit">
-              <Link href="#">
-                <LogOutIcon color="#fff" />
-              </Link>
-            </button>
-          </form>
+          <button type="button" onClick={handleLogout}>
+            <LogOutIcon color="#fff" />
+          </button>
         </div>
       </nav>
     </header>

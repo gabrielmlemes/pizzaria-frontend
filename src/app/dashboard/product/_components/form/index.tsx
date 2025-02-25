@@ -3,10 +3,11 @@
 import { UploadCloud } from "lucide-react";
 import Image from "next/image";
 import { ChangeEvent, useState } from "react";
-import Button from "../../components/button";
+import Button from "../../../components/button";
 import { useRouter } from "next/navigation";
 import { api } from "@/lib/api";
 import getCookieClient from "@/lib/cookieClient";
+import { toast } from "sonner";
 
 interface ProductFormProps {
   categories: CategoriesProps[];
@@ -28,7 +29,7 @@ const ProductForm = ({ categories }: ProductFormProps) => {
       const image = e.target.files[0];
 
       if (image.type !== "image/jpeg" && image.type !== "image/png") {
-        alert("Formato não suportado");
+        toast.warning("Formato da imagem inválido")
         return;
       }
 
@@ -44,7 +45,7 @@ const ProductForm = ({ categories }: ProductFormProps) => {
     const description = formData.get("description");
 
     if (!categoryIndex || !name || !price || !description || !image) {
-      console.log("Erro: Campos obrigatórios não preenchidos");
+      toast.warning("Preencha todos os campos")
       return;
     }
 
@@ -62,9 +63,12 @@ const ProductForm = ({ categories }: ProductFormProps) => {
       headers: {
         Authorization: `Bearer ${token}`
       }
+    }).catch((err)=> {
+      console.log(err);
+      toast.warning("Erro ao cadastrar produto")
     })
 
-    console.log("cadastrado com sucesso");
+    toast.success("Produto cadastrado com sucesso")
     
 
     router.replace("/dashboard")

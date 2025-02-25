@@ -1,6 +1,6 @@
 import { api } from "@/lib/api";
 import getCookiesServer from "@/lib/cookieServer";
-import ProductForm from "./_components";
+import ProductForm from "./_components/form";
 
 const Product = async () => {
     const token = await getCookiesServer()

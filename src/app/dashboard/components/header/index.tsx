@@ -24,7 +24,7 @@ const Header = () => {
             <h1 className="hidden md:flex md:text-3xl md:text-gray-50 md:font-bold">
               The <span className="text-red-700">Pizza</span>
             </h1>
-            <div className="relative w-14 h-14 ">
+            <div className="relative w-14 h-14 hidden md:flex">
               <Image
                 src={logoImg}
                 alt="logo"
@@ -48,13 +48,13 @@ const Header = () => {
             href="/dashboard/product"
             className="text-gray-200 text-lg hover:scale-105 hover:text-red-600 duration-300"
           >
-            Cardápio
+            Novo Produto
           </Link>
           <Link
             href="/dashboard/new"
             className="text-gray-200 text-lg hover:scale-105 hover:text-red-600 duration-300"
           >
-            Criar usuário
+            Novo Usuário
           </Link>
           <button type="button" onClick={handleLogout}>
             <LogOutIcon color="#fff" />

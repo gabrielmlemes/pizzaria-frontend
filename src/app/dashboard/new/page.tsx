@@ -30,7 +30,7 @@ const NewUser = () => {
         Novo <span className="text-red-700">Usuário</span>
       </h1>
 
-      <form action={handleRegister} className="w-full max-w-96 pt-8">
+      <form action={handleRegister} className="w-full max-w-96 pt-8 px-4">
         <div className="flex flex-col items-center justify-center gap-4">
           <input
             type="name"

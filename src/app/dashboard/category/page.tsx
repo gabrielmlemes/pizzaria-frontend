@@ -25,22 +25,22 @@ const Category = () => {
       },
     });
 
-    redirect('/dashboard')
+    redirect("/dashboard/product");
   }
 
   return (
-    <section className=" w-full max-w-lg mx-auto mt-12 px-3">
-      <div className="flex justify-start">
-        <h1 className="text-white font-bold text-3xl">Nova categoria</h1>
-      </div>
+    <section className="w-full h-[100vh-16px] flex justify-center items-center flex-col pt-16">
+      <h1 className="text-[68px] md:text-8xl text-gray-50 font-bold text-center">
+        Nova <span className="text-red-700">Categoria</span>
+      </h1>
 
-      <form action={handleNewCategory}>
+      <form action={handleNewCategory} className="w-full max-w-96 pt-10 px-4">
         <input
           type="text"
           name="name"
           required
           placeholder="Digite o nome da nova categoria"
-          className="px-3 h-10 rounded-md bg-[--dark-900] w-full mt-7 text-slate-200"
+          className="px-3 h-11 rounded-md bg-[var(--dark-900)] border border-slate-600 text-gray-50 w-full"
         />
 
         <Button text="Cadastrar" />

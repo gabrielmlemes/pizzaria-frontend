@@ -4,16 +4,18 @@ import { OrderProps } from "@/utils/orders.type";
 import { RefreshCw } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
-import { useState } from "react";
 import Modal from "./modal";
+import { use } from "react";
+import { OrderContext } from "@/providers/order";
 
 interface Props {
   orders: OrderProps[];
 }
 
 const Orders = ({ orders }: Props) => {
+  const { isOpen, onRequestOpen } = use(OrderContext);
+
   const router = useRouter();
-  const [isOpen, setIsOpen] = useState(false); // Estado do modal
 
   function handleRefresh() {
     router.refresh();
@@ -35,7 +37,7 @@ const Orders = ({ orders }: Props) => {
             <button
               key={order.id}
               className="border-l-[5px] hover:brightness-105 flex items-start pl-3 border-green-400 bg-gray-900 rounded-md w-full py-2"
-              onClick={() => setIsOpen(true)} // Abre o modal ao clicar
+              onClick={onRequestOpen}
             >
               <span className="text-white font-semibold">
                 Mesa {order.table}
@@ -44,9 +46,9 @@ const Orders = ({ orders }: Props) => {
           ))}
         </section>
       </main>
-
-      {/* Renderiza o modal apenas quando isOpen for true */}
-      {isOpen && <Modal isOpen={isOpen} setIsOpen={setIsOpen} />}
+      
+      {/* renderiza o modal se isOpen for true */}
+      {isOpen && <Modal />}
     </>
   );
 };

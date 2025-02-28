@@ -1,35 +1,21 @@
 "use client";
-
+import { use } from "react";
 import { X } from "lucide-react";
+import { OrderContext } from "@/providers/order";
 
-interface ModalProps {
-  isOpen: boolean;
-  setIsOpen: (open: boolean) => void;
-}
+const Modal = () => {
 
-const Modal = ({ isOpen, setIsOpen }: ModalProps) => {
-  function handleClose() {
-    setIsOpen(false);
-  }
+  const {onRequestClose} = use(OrderContext)
 
   return (
-    <div
-      className="fixed inset-0 flex items-center justify-center bg-black/50 backdrop-blur-md z-50"
-      onClick={handleClose} // Fecha ao clicar fora do conteúdo
-    >
-      <div
-        className="relative w-full max-w-lg p-6 border rounded-md bg-gray-900 shadow-lg"
-        onClick={(e) => e.stopPropagation()} // Impede fechamento ao clicar dentro do modal
-      >
+    <div className="fixed inset-0 flex items-center justify-center bg-black/50 backdrop-blur-md z-50" onClick={onRequestClose}>
+      <div className="relative w-full max-w-lg p-6 border rounded-md bg-gray-900 shadow-lg" onClick={(e) => e.stopPropagation()}>
         {/* Cabeçalho */}
         <div className="flex justify-between items-center mb-4">
           <h2 className="text-white font-semibold text-2xl">
             Detalhes do pedido
           </h2>
-          <button
-            onClick={handleClose}
-            className="p-2 text-red-500 hover:text-red-700"
-          >
+          <button className="p-2 text-red-500 hover:text-red-700" onClick={onRequestClose}>
             <X size={30} />
           </button>
         </div>
@@ -53,10 +39,7 @@ const Modal = ({ isOpen, setIsOpen }: ModalProps) => {
         </div>
 
         {/* Botão de ação */}
-        <button
-          onClick={handleClose}
-          className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-md font-semibold mt-6 w-full"
-        >
+        <button className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-md font-semibold mt-6 w-full">
           Concluir pedido
         </button>
       </div>

@@ -22,9 +22,6 @@ async function getOrders(): Promise<OrderProps[] | []> {
 
 const Dashboard = async () => {
   const orders = await getOrders()
-  console.log(orders);
-  
-
   return (
     <>
       <Orders orders={orders} />

@@ -20,18 +20,18 @@ const Header = () => {
 
   return (
     <header>
-      <nav className=" px-12 pt-4 flex justify-between">
-        <Link href="/dashboard">
+      <nav className=" px-8 pt-4 flex justify-between">
+        <Link href="/dashboard" className="mr-4">
           <div className="flex items-center justify-center">
             <h1 className="hidden md:flex md:text-3xl md:text-gray-50 md:font-bold">
               The <span className="text-red-700">Pizza</span>
             </h1>
-            <div className="relative w-14 h-14 hidden md:flex">
+            <div className="relative w-14 h-14 ">
               <Image
                 src={logoImg}
                 alt="logo"
                 fill
-                className="object-cover pl-3"
+                className="object-cover"
                 priority={true}
                 quality={100}
               />

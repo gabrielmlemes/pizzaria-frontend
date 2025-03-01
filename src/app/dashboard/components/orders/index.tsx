@@ -22,9 +22,13 @@ const Orders = ({ orders }: Props) => {
     toast.success("Pedidos atualizados");
   }
 
+  async function handleDetailOrder(order_id: string) {
+    await onRequestOpen(order_id);
+  }
+
   return (
     <>
-      <main className="w-full max-w-lg mx-auto mt-12 px-3 relative">
+      <main className="w-full max-w-lg mx-auto mt-12 px-5 relative">
         <div className="flex items-center justify-start gap-3">
           <h1 className="text-white font-bold text-3xl">Últimos pedidos</h1>
           <button onClick={handleRefresh}>
@@ -37,7 +41,7 @@ const Orders = ({ orders }: Props) => {
             <button
               key={order.id}
               className="border-l-[5px] hover:brightness-105 flex items-start pl-3 border-green-400 bg-gray-900 rounded-md w-full py-2"
-              onClick={onRequestOpen}
+              onClick={() => handleDetailOrder(order.id)}
             >
               <span className="text-white font-semibold">
                 Mesa {order.table}
@@ -45,8 +49,10 @@ const Orders = ({ orders }: Props) => {
             </button>
           ))}
         </section>
+
+        {orders.length === 0 && <span className="text-gray-100 text-sm">Não há pedidos em aberto </span>}
       </main>
-      
+
       {/* renderiza o modal se isOpen for true */}
       {isOpen && <Modal />}
     </>

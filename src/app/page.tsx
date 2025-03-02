@@ -3,8 +3,16 @@ import logoImg from "/public/pizza-svgrepo-com.svg";
 import { api } from "@/lib/api";
 import { redirect } from "next/navigation";
 import { cookies } from "next/headers";
+import getCookiesServer from "@/lib/cookieServer";
 
 export default async function Home() {
+
+const session = await getCookiesServer()
+
+if (session) {
+  redirect('/dashboard')
+}
+  
   async function handleLogin(formData: FormData) {
     "use server";
 

@@ -51,17 +51,18 @@ const Modal = () => {
           {order.map((item) => (
             <div className="flex flex-col" key={item.id}>
               <span className="text-green-400 text-lg font-semibold">
-                Qtd: {item.amount} - {item.product.name} - R$ {parseFloat(item.product.price) * item.amount}
+                Qtd: {item.amount} - {item.product.name} - R${" "}
+                {parseFloat(item.product.price) * item.amount}
               </span>
               <span className="text-gray-300 text-sm -mt-1 mb-2">
                 {item.product.description}
               </span>
-              
-              <h4 className="text-xl border-t-2 pt-2 text-center font-bold text-[var(--green-900)]">Total: R${calculateTotalOrder(order)}</h4>
             </div>
-
           ))}
         </div>
+        <h4 className="text-xl border-t-2 pt-2 text-center font-bold text-[var(--green-900)]">
+          Total: R${calculateTotalOrder(order)}
+        </h4>
 
         {/* Botão de ação */}
         <button

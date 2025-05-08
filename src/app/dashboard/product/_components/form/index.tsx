@@ -44,7 +44,7 @@ const ProductForm = ({ categories }: ProductFormProps) => {
     const price = formData.get("price");
     const description = formData.get("description");
 
-    if (!categoryIndex || !name || !price || !description || !image) {
+    if (!categoryIndex || !name || !price || !description) {
       toast.warning("Preencha todos os campos")
       return;
     }
@@ -55,7 +55,11 @@ const ProductForm = ({ categories }: ProductFormProps) => {
     data.append("price", price)
     data.append("description", description)
     data.append("category_id", categories[Number(categoryIndex)].id)
-    data.append("file", image)
+    // data.append("file", image)
+    
+    if (image) {
+      data.append("file", image);
+    }
 
     const token = getCookieClient()
 
@@ -92,7 +96,7 @@ const ProductForm = ({ categories }: ProductFormProps) => {
             <input
               type="file"
               accept="image/png, image/jpeg"
-              required
+              // required
               onChange={handleFile}
               className="absolute w-full h-full opacity-0"
             />

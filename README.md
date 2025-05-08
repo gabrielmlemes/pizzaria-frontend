@@ -1,36 +1,61 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# The Pizza - Frontend
 
-## Getting Started
+[Deploy](https://thepizzaweb.vercel.app)
 
-First, run the development server:
+The Pizza é um sistema de controle de pedidos interativo para pizzarias e restaurantes, desenvolvido para proporcionar uma experiência de usuário fluida e intuitiva. Este projeto integra tecnologias modernas e práticas de SEO para garantir performance e alta disponibilidade, além de facilitar a integração com o backend.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Visão Geral
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+O frontend do projeto The Pizza apresenta:
+- **Exibição dinâmica e responsiva** dos pedidos.
+- **Integração segura com o backend** por meio de API REST.
+- Uso de **Server Components** e **Client Components** para otimizar performance e interatividade.
+- Design moderno e adaptado para dispositivos móveis, garantindo uma experiência consistente.
+- **Deploy automatizado na Vercel**, com atualizações contínuas e alta disponibilidade.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Funcionalidades
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Interface interativa:** Visualização clara e responsiva dos pedidos.
+- **Navegação fluida:** Uso de animações e feedbacks visuais que melhoram a experiência do usuário.
+- **Integração com API:** Comunicação eficiente para autenticação e gerenciamento de pedidos.
+- **Deploy contínuo:** Atualizações automáticas via GitHub e Vercel.
 
-## Learn More
+## Principais Tecnologias Utilizadas
 
-To learn more about Next.js, take a look at the following resources:
+- **Next.js:** Framework React com suporte a SSR e SSG para performance e SEO.
+- **React:** Criação de interfaces dinâmicas e interativas.
+- **Tailwind CSS:** Estilização rápida e consistente com classes utilitárias.
+- **Server Actions & Client Components:** Abordagem híbrida para equilibrar renderização no servidor e interatividade no cliente.
+- **Integração com API REST:** Comunicação fluida com o backend para gerenciamento de pedidos e autenticação.
+- **Vercel:** Plataforma de deploy que garante alta disponibilidade e CI/CD.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Instalação e Execução
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Pré-requisitos
+- [Node.js](https://nodejs.org/) (versão LTS recomendada)
+- [Git](https://git-scm.com/)
 
-## Deploy on Vercel
+### Passo a Passo
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. **Clone o repositório:**
+   ```bash
+   git clone https://github.com/gabrielmlemes/pizzaria-frontend.git
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+2. **Entre na pasta do projeto:**
+   ```bash
+    cd pizzaria-frontend
+
+3. **Instale as dependências**
+   ```bash
+    npm install
+
+4. **Inicie o servidor de desenvolvimento**
+   ```bash
+    npm run dev
+
+Acesse a aplicação em: http://localhost:3000
+
+5. **Build para produção**
+   ```bash
+   npm run build
+   npm run start

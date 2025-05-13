@@ -6,13 +6,12 @@ import { cookies } from "next/headers";
 import getCookiesServer from "@/lib/cookieServer";
 
 export default async function Home() {
+  const session = await getCookiesServer();
 
-const session = await getCookiesServer()
+  if (session) {
+    redirect("/dashboard");
+  }
 
-if (session) {
-  redirect('/dashboard')
-}
-  
   async function handleLogin(formData: FormData) {
     "use server";
 
@@ -91,6 +90,12 @@ if (session) {
           </button>
         </div>
       </form>
+
+      <div className="bg-gray-500/30 rounded-xl p-2 mt-7 text-center"> 
+        <b className="text-gray-300"> Acesso para testes:</b> 
+        <p className="text-gray-300">Email: admin@admin.com</p>
+        <p className="text-gray-300">Senha: 123456</p>
+      </div>
     </div>
   );
 }
